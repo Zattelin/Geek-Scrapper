@@ -3,10 +3,13 @@ var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-mongoose.Promise = Promise;
 // Initialize Express
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+mongoose.Promise = Promise;
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/HeadlinesDB';
+mongoose.connect(MONGODB_URI);
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));

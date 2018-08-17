@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="header clearfix">
+        <h3 class="text-muted">Geekologie a blog dedicated to the scientific study of gadgets, gizmos, and awesome.</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="jumboheader"> Geek Scraper</h1>
+        <p><a class="btn btn-lg btn-success" href="/scrape" role="button">Get the latest news!</a></p>
+    </div>
+
+     {{#each result}}
+    <div class="card news-section">
+        <a href="{{this.link}}">
+            <h4 class="card-header">{{this.title}}</h4>
+        </a>
+        <div class="card-block">
+            
+            <a href="{{this.link}}">
+            </a>
+            <br>
+            <a href="/articles/{{this._id}}" class="btn btn-primary">Comment</a>
+        </div>
+    </div>
+    <br>
+    <br> {{/each}}
+
+
+
+    <footer class="footer">
+    </footer>
+
+</div>
+
+
